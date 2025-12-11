@@ -1,49 +1,45 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; /** Reset margin/padding and use border-box for consistent sizing **/
 }
 
-/* DARK MODE AND LIGHT MODE*/
-
+/* DARK MODE AND LIGHT MODE VARIABLES */
 :root {
-  --border-radius: 18px;
+  --border-radius: 18px; /** Default border radius for panels, cards, buttons **/
   --bg-dark: #0f1115;
   --bg-soft: #1d2129;
   --bg-light: #f7f3ef;
   --text-dark: #0e0e0e;
   --text-light: #f5f5f5;
-  --text-soft: #cfd2d8;
-  --accent: #9ad47d;
+  --text-soft: #cfd2d8; /** Softer text for secondary content **/
+  --accent: #9ad47d; /** Primary accent color **/
   --accent-dark: #5d9447;
   --muted: #8a8f98;
-  --glass: rgba(247, 243, 239, 0.08);
-  --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
-  --page-bg: linear-gradient(160deg, #090b0e, #12151c 50%, #1f242e);
-  --nav-bg: rgba(15, 17, 21, 0.75);
-  --hero-card-bg: rgba(19, 22, 29, 0.85);
-  --panel-bg: rgba(247, 243, 239, 0.04);
-  --tile-bg: rgba(251, 248, 242, 0.05);
-  --testimonial-bg: rgba(15, 17, 21, 0.8);
-  --input-bg: rgba(15, 17, 21, 0.9);
-  --stroke: rgba(255, 255, 255, 0.08);
-  --stroke-strong: rgba(255, 255, 255, 0.2);
-  --contact-gradient: linear-gradient(
-    135deg,
-    rgba(247, 243, 239, 0.08),
-    rgba(15, 17, 21, 0.85)
-  );
-  --tile-index: rgba(255, 255, 255, 0.08);
-  --quote-color: rgba(255, 255, 255, 0.06);
+  --glass: rgba(247, 243, 239, 0.08); /** Glass-like overlay effect **/
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.35); /** Default box-shadow **/
+  --page-bg: linear-gradient(160deg, #090b0e, #12151c 50%, #1f242e); /** Page background gradient **/
+  --nav-bg: rgba(15, 17, 21, 0.75); /** Navbar background **/
+  --hero-card-bg: rgba(19, 22, 29, 0.85); /** Background for hero section cards **/
+  --panel-bg: rgba(247, 243, 239, 0.04); 
+  --tile-bg: rgba(251, 248, 242, 0.05); /** Background for tiles **/
+  --testimonial-bg: rgba(15, 17, 21, 0.8); /** Testimonial cards background **/
+  --input-bg: rgba(15, 17, 21, 0.9); /** Form input background **/
+  --stroke: rgba(255, 255, 255, 0.08); 
+  --stroke-strong: rgba(255, 255, 255, 0.2); 
+  --contact-gradient: linear-gradient(135deg, rgba(247, 243, 239, 0.08), rgba(15, 17, 21, 0.85));
+  --tile-index: rgba(255, 255, 255, 0.08); 
+  --quote-color: rgba(255, 255, 255, 0.06); /** Quote mark color in testimonials **/
 }
 
+/* Toggle Dark/Light Mode */
 #theme-toggle {
   position: absolute;
   opacity: 0;
-  pointer-events: none;
+  pointer-events: none; /** Hidden checkbox for theme switching **/
 }
 
-#theme-toggle:checked ~ .page-shell {
+#theme-toggle:checked ~ .page-shell { /** Variables for light mode when toggle is checked **/
   --page-bg: linear-gradient(150deg, #f8f6f1, #fefefe 60%, #f1f1f1);
   --text-light: #181a1f;
   --text-soft: #454a53;
@@ -56,19 +52,15 @@
   --input-bg: rgba(255, 255, 255, 0.95);
   --stroke: rgba(0, 0, 0, 0.08);
   --stroke-strong: rgba(0, 0, 0, 0.2);
-  --contact-gradient: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.96),
-    rgba(231, 235, 238, 0.95)
-  );
-  --shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  --contact-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(231, 235, 238, 0.95));
+  --shadow: 0 20px 60px rgba(0,0,0,0.15);
   --glass: rgba(15, 17, 21, 0.05);
   --tile-index: rgba(0, 0, 0, 0.08);
   --quote-color: rgba(0, 0, 0, 0.08);
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; /** Smooth scrolling for anchor links **/
 }
 
 body {
@@ -76,29 +68,34 @@ body {
   background: #060708;
   color: var(--text-light);
   line-height: 1.6;
-  min-height: 100vh;
+  min-height: 100vh; /** Ensure body always fills viewport **/
 }
 
+/* Page wrapper */
 .page-shell {
   min-height: 100vh;
   background: var(--page-bg);
   padding: 0 3vw;
   color: var(--text-light);
-  transition: background 0.6s ease, color 0.6s ease;
+  transition: background 0.6s ease, color 0.6s ease; /** Smooth theme transitions **/
 }
 
+/* Sections and headers spacing */
 section,
 header {
   padding: 6rem 0;
 }
 
+/* Hero section */
 .hero {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding-top: 1.5rem;
 }
 
+/* Navbar */
 .nav {
   display: flex;
   align-items: center;
@@ -108,7 +105,7 @@ header {
   position: sticky;
   top: 0;
   background: var(--nav-bg);
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px); /** Glass effect **/
   border-radius: 999px;
   padding-inline: 2.5rem;
   margin-top: 0;
@@ -116,32 +113,28 @@ header {
   border: 1px solid var(--stroke);
 }
 
-.hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding-top: 1.5rem;
-}
-
+/* Logo font */
 .logo {
   font-family: "Playfair Display", serif;
   font-size: 1.5rem;
   letter-spacing: 0.2rem;
 }
 
+/* Navigation links */
 .nav-links {
   list-style: none;
   display: flex;
   gap: 2rem;
 }
 
+/* Navigation actions container */
 .nav-actions {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
+/* Theme switch */
 .theme-switch {
   position: relative;
   width: 100px;
@@ -164,13 +157,14 @@ header {
 
 .theme-switch span {
   pointer-events: none;
-  z-index: 2;
+  z-index: 2; /** Labels stay above thumb but not interactive **/
 }
 
 .theme-switch .label-dark {
-  opacity: 0.4;
+  opacity: 0.4; /** Dimmed label when not active **/
 }
 
+/* Thumb for theme switch */
 .theme-switch .thumb {
   position: absolute;
   width: 44px;
@@ -184,22 +178,12 @@ header {
   z-index: 1;
 }
 
-#theme-toggle:checked ~ .page-shell .theme-switch {
-  background: rgba(0, 0, 0, 0.05);
-}
-
+/* Move thumb on toggle */
 #theme-toggle:checked ~ .page-shell .theme-switch .thumb {
   transform: translateX(46px);
 }
 
-#theme-toggle:checked ~ .page-shell .theme-switch .label-light {
-  opacity: 0.4;
-}
-
-#theme-toggle:checked ~ .page-shell .theme-switch .label-dark {
-  opacity: 1;
-}
-
+/* Link styles with underline effect */
 .nav-links a {
   color: var(--text-light);
   text-decoration: none;
@@ -232,6 +216,7 @@ header {
   opacity: 1;
 }
 
+/* Call-to-action button */
 .cta,
 .popup-content {
   border: none;
@@ -252,10 +237,10 @@ header {
 
 .cta:hover,
 .popup-content:hover {
-  transform: translateY(-3px);
+  transform: translateY(-3px); /** Lift effect on hover **/
 }
 
-
+/* Hero grid layout */
 .hero-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -264,6 +249,7 @@ header {
   padding-top: 4rem;
 }
 
+/* Hero section copy */
 .hero-copy h1 {
   font-family: "Playfair Display", serif;
   font-size: clamp(2.5rem, 5vw, 4.5rem);
@@ -283,6 +269,7 @@ header {
   color: var(--muted);
 }
 
+/* Hero actions and stats */
 .hero-actions {
   display: flex;
   gap: 1rem;
@@ -296,12 +283,7 @@ header {
   flex-wrap: wrap;
 }
 
-.stat {
-  font-size: 2.2rem;
-  font-weight: 600;
-  display: block;
-}
-
+/* Hero visual images/animations */
 .hero-visual {
   position: relative;
   min-height: 420px;
@@ -311,8 +293,8 @@ header {
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(154, 212, 125, 0.35), transparent);
-  animation: pulse 6s ease-in-out infinite;
+  background: radial-gradient(circle, rgba(69, 142, 32, 0.35), transparent);
+  animation: pulse 6s ease-in-out infinite; /** Pulsing circle animation **/
 }
 
 .hero-photo {
@@ -323,16 +305,17 @@ header {
   background-position: center;
   border-radius: 36px;
   box-shadow: var(--shadow);
-  animation: float 8s ease-in-out infinite;
+  animation: float 8s ease-in-out infinite; /** Floating animation **/
 }
 
+/* Section headers */
 .section-header {
   text-align: center;
   max-width: 700px;
   margin: 0 auto 3rem auto;
 }
 
-/* Generic boxed panel used across sections */
+/* Generic boxed panel */
 .section-box {
   padding: 2rem;
   border-radius: 22px;
@@ -347,6 +330,7 @@ header {
   margin-top: 0;
 }
 
+/* Section titles */
 .section-header h2 {
   font-family: "Playfair Display", serif;
   font-size: clamp(2rem, 4vw, 3rem);
@@ -360,67 +344,74 @@ header {
   position: relative;
 }
 
-/* ContactUs layout: left photo, right content — use flex so both sides match height */
+/* ContactUs layout: left photo, right content */
 .contactUs .container {
-  display: flex;
+  display: flex; /** Flex container for image and content **/
   gap: 1.5rem;
-  align-items: stretch;
+  align-items: stretch; /** Match height **/
 }
+
 .contactUs .container .contact-photo {
-  /* make the photo column narrower so it doesn't dominate */
-  flex: 0 0 28%;
-  max-width: 360px; /* cap absolute width on very wide screens */
+  flex: 0 0 28%; /** Fixed flex-basis for photo column **/
+  max-width: 360px; /** Cap photo width on large screens **/
 }
+
 .contactUs .container .contact-content {
-  flex: 1 1 auto;
+  flex: 1 1 auto; /** Take remaining space **/
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 1rem;
 }
+
 .contactUs .container .contact-content .eyebrow,
 .contactUs .container .contact-content h2,
 .contactUs .container .contact-content p {
-  text-align: left;
+  text-align: left; /** Left-align content in desktop **/
 }
+
 .contactUs .container .contact-flex {
   width: 100%;
 }
+
 .contactUs .container .contact-photo img.contact-photo-img {
   width: 100%;
   height: 100%;
-  /* much smaller minimum so the photo doesn't dominate */
-  min-height: 180px;
-  max-height: 420px;
-  object-fit: cover;
+  min-height: 180px; /** Minimum height to avoid collapsing **/
+  max-height: 420px; /** Cap height **/
+  object-fit: cover; /** Maintain aspect ratio and cover box **/
   display: block;
   border-radius: var(--border-radius, 18px);
   box-shadow: 0 6px 16px rgba(0,0,0,0.22);
   border: 1px solid var(--stroke);
 }
 
+/* Responsive tweaks for smaller screens */
 @media (max-width: 900px) {
   .contactUs .container .contact-photo img.contact-photo-img {
     height: 140px;
     min-height: 0;
   }
-  
 }
+
+/* Carousel for products or images */
 .carousel {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1.5rem;
 }
 
+/* Individual tile card */
 .tile {
   padding: 2.4rem;
   border-radius: 26px;
   background: var(--tile-bg);
   border: 1px solid var(--stroke);
   position: relative;
-  overflow: hidden;
+  overflow: hidden; /** Clip hover effects **/
 }
 
+/* Tile image inside card */
 .tile-img {
   display: block;
   width: 100%;
@@ -429,24 +420,22 @@ header {
   border-radius: 12px 12px 8px 8px;
   margin-bottom: 0.9rem;
   box-shadow: 0 8px 22px rgba(0,0,0,0.18);
-}
-
-/* Hover / focus zoom animation for tile images */
-.tile-img {
-  transition: transform 450ms cubic-bezier(.2,.9,.2,1);
+  transition: transform 450ms cubic-bezier(.2,.9,.2,1); /** Smooth hover zoom **/
   transform-origin: center center;
 }
+
+/* Hover zoom effect for tile image */
 .tile:hover .tile-img,
 .tile:focus-within .tile-img {
   transform: scale(1.12);
 }
 
+/* Tile badge */
 .tile span {
   font-size: 1.6rem;
   font-weight: 600;
   color: var(--text-light);
   position: absolute;
-  /* place the badge outside the top edge of the tile */
   top: -18px;
   left: 50%;
   transform: translateX(-50%);
@@ -458,12 +447,12 @@ header {
   border: 1px solid var(--stroke);
 }
 
-/* GREEN HOVER EFFECT ON SEASONAL PRODUCTS IMAGES */
+/* Green radial hover overlay for seasonal products */
 .tile::after {
   content: "";
   position: absolute;
   inset: 20%;
-  background: radial-gradient(circle, rgba(154, 212, 125, 0.15), transparent);
+  background: radial-gradient(circle, rgba(85, 255, 0, 0.15), transparent);
   opacity: 0;
   transition: opacity 0.5s ease;
 }
@@ -472,6 +461,7 @@ header {
   opacity: 1;
 }
 
+/* Testimonial grid */
 .testimony-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -488,7 +478,7 @@ header {
 }
 
 .testimony-grid article::before {
-  content: "❝";
+  content: "❝"; /** Quote mark **/
   position: absolute;
   top: 1rem;
   right: 1.5rem;
@@ -496,6 +486,7 @@ header {
   color: var(--quote-color);
 }
 
+/* Menu photo */
 .menu-photo {
   width: 100%;
   height: auto;
@@ -505,6 +496,7 @@ header {
   margin-top: 2rem;
 }
 
+/* Contact card grid */
 .contact-card {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -516,6 +508,7 @@ header {
   box-shadow: var(--shadow);
 }
 
+/* Form field layout */
 .field {
   display: flex;
   flex-direction: column;
@@ -542,28 +535,29 @@ header {
 
 .field input:focus,
 .field textarea:focus {
-  outline: 1px solid var(--accent);
+  outline: 1px solid var(--accent); /** Highlight on focus **/
 }
 
+/* Popup overlay */
 .popup {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    display: none; /** Hidden by default **/
+    position: fixed;
+    z-index: 1;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    background-color: rgba(0,0,0,0.4); /* Black background with opacity */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
     justify-content: center;
     align-items: center;
 }
 
 .popup-content {
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 80%;
     max-width: 500px;
     text-align: center;
     border-radius: 10px;
@@ -582,26 +576,14 @@ header {
 .close-btn:focus {
     color: black;
     text-decoration: none;
-    cursor: pointer;
 }
 
-/* Class to show the popup */
+/* Show popup by adding class */
 .show {
     display: flex;
 }
 
-
-.contact-card {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  padding: 3rem;
-  border-radius: 32px;
-  background: var(--contact-gradient);
-  border: 1px solid var(--stroke);
-  box-shadow: var(--shadow);
-}
-
+/* Generic container grid for sections */
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -613,13 +595,14 @@ header {
   box-shadow: var(--shadow);
 }
 
+/* Contact section styling */
 .contact {
-    /* use transparent background so theme background shows through */
-    background: transparent;
+    background: transparent; /** Transparent to show page bg **/
     padding-bottom: 2.5rem;
     color: var(--text-soft);
 }
 
+/* Eyebrow large text */
 .eyebrow2 {
   text-transform: uppercase;
   letter-spacing: 0.35rem;
@@ -627,21 +610,22 @@ header {
   color: var(--muted);
 }
 
+/* Flex layout for contact info and form */
 .contact-flex {
     display: flex;
     flex-wrap: wrap;
     gap: 2.6rem;
     margin-top: 0.5rem;
     align-items: flex-start;
-    /* align items to the right on wide screens */
     justify-content: flex-end;
     width: 100%;
 }
+
+/* Contact info panels */
 .contact-info {
     flex: 1 1 240px;
     font-size: 1.07rem;
     line-height: 1.7;
-    /* match panel styling from theme */
     background: var(--panel-bg);
     border: 1px solid var(--stroke);
     border-radius: var(--border-radius,18px);
@@ -650,13 +634,15 @@ header {
     color: var(--text-soft);
     order: 1;
 }
+
 .contact-info a {
     color: var(--accent);
     text-decoration: underline;
     font-weight: 700;
 }
+
+/* Contact form styling */
 .contact-form {
-    /* push form to the right in the flex row */
     order: 2;
     margin-left: auto;
     background: var(--hero-card-bg);
@@ -672,10 +658,10 @@ header {
     color: var(--text-light);
 }
 
-/* responsive: center contact blocks on small screens */
+/* Responsive tweaks for medium screens */
 @media (max-width: 900px) {
   .contact-flex {
-    justify-content: center;
+    justify-content: center; /** Center panels on smaller screens **/
   }
   .contact-form {
     order: initial;
@@ -689,9 +675,8 @@ header {
   }
 }
 
-/* Phone / small tablet adjustments: make layouts stack, reduce paddings, scale images */
+/* Responsive tweaks for small screens (phones/tablets) */
 @media (max-width: 600px) {
-  /* Contact Us: stack photo and content vertically */
   .contactUs .container {
     flex-direction: column;
     align-items: center;
@@ -711,7 +696,7 @@ header {
   .contactUs .container .contact-content .eyebrow,
   .contactUs .container .contact-content h2,
   .contactUs .container .contact-content p {
-    text-align: center;
+    text-align: center; /** Center text for mobile **/
   }
   .contactUs .container .contact-photo img.contact-photo-img {
     height: 180px;
@@ -719,17 +704,15 @@ header {
     border-radius: 12px;
   }
 
-  /* Tiles: reduce image height and tile padding */
   .tile {
-    padding: 1rem;
+    padding: 1rem; /** Reduce padding on tiles **/
   }
   .tile-img {
-    height: 120px;
+    height: 120px; /** Smaller images on mobile **/
     border-radius: 10px;
   }
   .tile h3 { font-size: 1.05rem; }
 
-  /* Reduce hero paddings for small screens */
   section, header { padding: 3rem 0; }
   .hero-grid { padding-top: 2rem; gap: 1.5rem; }
 }
@@ -741,14 +724,14 @@ header {
   .tile span { font-size: 1.2rem; top: -14px; }
 }
 
-/* contactUs layout is handled above (flex). Mobile tweaks for the image are defined earlier. */
-
+/* Sweet photo background image */
 .sweet-photo {
   flex: 1;
   background: url("sweet2.png") no-repeat center center;
   background-size: cover;
 }
 
+/* Footer layout */
 .footer {
   display: flex;
   flex-wrap: wrap;
@@ -783,12 +766,15 @@ header {
   justify-content: center;
   z-index: 9999;
 }
-.modal.open { display: flex; }
+
+.modal.open { display: flex; } /** Show modal **/
+
 .modal-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.45);
+  background: rgba(0,0,0,0.45); /** Semi-transparent background **/
 }
+
 .modal-content {
   position: relative;
   background: var(--hero-card-bg);
@@ -800,9 +786,12 @@ header {
   border: 1px solid var(--stroke);
   z-index: 10000;
 }
+
 .modal h3 { margin: 0 0 0.5rem 0; }
 .modal p { margin: 0 0 1rem 0; color: var(--text-soft); }
+
 .modal-actions { text-align: right; }
+
 .modal-close {
   position: absolute;
   top: 8px;
@@ -814,38 +803,23 @@ header {
   cursor: pointer;
 }
 
+/* Animations */
 @keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-12px);
-  }
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
 }
 
 @keyframes pulse {
-  0%,
-  100% {
-    transform: scale(0.95);
-    opacity: 0.6;
-  }
-  50% {
-    transform: scale(1.05);
-    opacity: 1;
-  }
+  0%, 100% { transform: scale(0.95); opacity: 0.6; }
+  50% { transform: scale(1.05); opacity: 1; }
 }
 
 @keyframes drift {
-  0%,
-  100% {
-    transform: translateY(0px) scale(1);
-  }
-  50% {
-    transform: translateY(-8px) scale(1.02);
-  }
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-8px) scale(1.02); }
 }
 
+/* Responsive nav for tablets */
 @media (max-width: 768px) {
   .nav {
     flex-direction: column;
@@ -860,7 +834,7 @@ header {
   }
 }
 
-/* Booking/contact form tweaks specifically for small screens */
+/* Small screen contact form tweaks */
 @media (max-width: 600px) {
   .contact-card {
     display: flex;
@@ -874,24 +848,19 @@ header {
     padding: 0;
     margin: 0;
   }
-  .contact-card .eyebrow {
-    font-size: 0.9rem;
+  .contact-card .eyebrow { 
+    font-size: 0.9rem; 
   }
-  .contact-card h2 {
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
+  .contact-card h2 { 
+    font-size: 1.25rem; margin-bottom: 0.5rem; 
   }
   .field input,
-  .field textarea {
-    width: 100%;
-    font-size: 1rem;
+  .field textarea { 
+    width: 100%; font-size: 1rem; 
   }
-  .field {
-    margin-bottom: 0.75rem;
+  .field { 
+    margin-bottom: 0.75rem; 
   }
-  .contact-card .cta {
-    width: 100%;
-    padding: 0.85rem 1rem;
-    font-size: 1rem;
-  }
+  .contact-card .cta { 
+    width: 100%; padding: 0.85rem 1rem; font-size: 1rem; }
 }
