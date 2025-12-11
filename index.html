@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nocturne Patisserie | Crafted Cookies & Pastries</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Work+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <input id="theme-toggle" type="checkbox" hidden />
+    <div class="page-shell">
+    <header class="hero" id="home">
+      <nav class="nav">
+        <div class="logo">Nocturne Patisserie</div>
+        <ul class="nav-links">
+          <li><a href="#artisan">Artisanry</a></li>
+          <li><a href="#collection">Collection</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+          <li><a href="#contactUs">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <label class="theme-switch" for="theme-toggle" aria-label="Toggle theme">
+            <span class="label-light">Dark</span>
+            <span class="label-dark">Light</span>
+            <span class="thumb" aria-hidden="true"></span>
+          </label>
+          <a class="cta ghost" href="#contact">Taste Session</a>
+        </div>
+      </nav>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Small-batch pastry atelier</p>
+          <h1>Butter-rich cookies glazed with luminous flavors.</h1>
+          <p>
+            We fold French technique into Filipino warmth—layered dough,
+            house-made couverture, and edible flowers sourced daily.
+          </p>
+          <div class="hero-actions">
+            <a class="cta" href="#collection">Explore Pastries</a>
+          </div>
+          <div class="hero-stats">
+            <div>
+              <span class="stat">150+</span>
+              <p>Customized tasting boxes</p>
+            </div>
+            <div>
+              <span class="stat">24h</span>
+              <p>Order-to-door delivery</p>
+            </div>
+            <div>
+              <span class="stat">98%</span>
+              <p>Client return rate</p>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-circle"></div>
+          <div class="hero-photo"></div>
+        </div>
+      </div>
+    </header>
+
+    <section id="artisan" class="artisan">
+      <div class="section-box">
+      <div class="section-header">
+        <p class="eyebrow">Signature craft</p>
+        <h2>Layering textures, brushing light.</h2>
+        <p>
+          Our patissiers knead by hand, chill dough on marble, and torch sugar
+          to capture a caramelized glow across every cookie.
+        </p>
+      </div>
+      <div class="artisan-grid">
+        <article class="card">
+          <h3>Curated Ingredients</h3>
+          <p>
+            Single-origin chocolate, cultured butter, micro-herbs, and sea salt
+            crystals give depth to every bite.<br>
+            Special, high-quality ingredients for unique cookie flavors.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Slow Fermentation</h3>
+          <p>
+            Dough rests 48 hours, building aromatic complexity and a tender yet
+            crisp crumb.<br>
+            Dough rises slowly for deeper flavor and better texture.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Finishing Atelier</h3>
+          <p>
+            Edible petals, metallic drips, and vapor infusions deliver visual
+            drama that amplifies flavor.<br>
+            Cookies are carefully decorated and perfected before serving.
+          </p>
+        </article>
+      </div>
+      </div>
+    </section>
+
+    <section id="collection" class="collection">
+      <div class="section-box">
+      <div class="section-header">
+        <p class="eyebrow">Seasonal collection</p>
+        <h2>Pastries designed for gatherings.</h2>
+      </div>
+      <div class="carousel">
+        <article class="tile">
+          <span>01</span>
+          <img class="tile-img" src="velvet.jpg" alt="Verdant Velvet" />
+          <h3>Verdant Velvet</h3>
+          <p>Matcha financier with crystallized lime zest and jasmine mist.</p>
+        </article>
+        <article class="tile">
+          <span>02</span>
+          <img class="tile-img" src="dark.png" alt="Midnight Fleur" />
+          <h3>Midnight Fleur</h3>
+          <p>Dark cocoa sablé layered with blackberry gelée and gold pollen.</p>
+        </article>
+        <article class="tile">
+          <span>03</span>
+          <img class="tile-img" src="cloud.jpg" alt="Citron Cloud" />
+          <h3>Citron Cloud</h3>
+          <p>Lemon pâte sucrée, yuzu curd whip, brûléed meringue petals.</p>
+        </article>
+        <article class="tile">
+          <span>04</span>
+          <img class="tile-img" src="cookie.webp" alt="Amber Noir" />
+          <h3>Amber Noir</h3>
+          <p>Brown butter cookie, smoked caramel, cacao nib praline dust.</p>
+        </article>
+      </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+      <div class="section-box">
+      <div class="section-header">
+        <p class="eyebrow">Client Reviews</p>
+        <h2>Edible experiences that linger.</h2>
+      </div>
+      <div class="testimony-grid">
+        <article>
+          <p>
+            “The pastries are simply outstanding! 
+            Each bite is a delight that transports you to a French bakery.”
+          </p>
+          <span>— Sarah</span>
+        </article>
+        <article>
+          <p>
+            “I will definitely be back! 
+            The flavor combinations are unique and the quality is exceptional.”
+          </p>
+          <span>— Mateo</span>
+        </article>
+        <article>
+          <p>
+            “Every visit is a treat! The staff is friendly, and the freshness is unmatched.”
+          </p>
+          <span>— Lara</span>
+        </article>
+      </div>
+      </div>
+    </section> 
+
+    <section id="menu" class="menu">
+      <div class="section-box">
+      <div class="section-header">
+        <p class="eyebrow">Our menu</p>
+        <h2>Explore our full pastry collection.</h2>
+        <img class="menu-photo" src="menu.png" alt="Lumière pastry menu preview" />
+      </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="contact-card">
+        <div>
+          <p class="eyebrow">Private tastings</p>
+          <h2>Book your reservation.</h2>
+          <p>
+            Share your gathering details to receive a curated pastry storyboard,
+            flavor deck, and setup mood board within 12 hours.
+          </p>
+        </div>
+        <form id="bookingForm">
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" type="text" placeholder="Your name" />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="hello@gmail.com" />
+          </div>
+          <div class="field">
+            <label for="event">Event Vision</label>
+            <textarea
+              id="event"
+              rows="3"
+              placeholder="Describe the mood, location, and number of guests."
+            ></textarea>
+          </div>
+          <button class="cta" type="submit">Submit</button>
+        </form>
+        <div id="successPopup" class="popup">
+          <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <h2>Successfully Booked!</h2>
+            <p>Your booking has been confirmed.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <section id="contactUs" class="contactUs">
+    <div class="container">
+      <!-- left: photo column -->
+      <div class="contact-photo">
+        <img class="contact-photo-img" src="sweet2.jpg" alt="Lumière shop front" />
+      </div>
+
+      <!-- right: contact content (eyebrow + contact block) -->
+      <div class="contact-content">
+        <h2 class="eyebrow2">Get in Touch</h2>
+        <div class="contact-flex">
+          <div class="contact-info">
+            <h2>Contact Us</h2>
+            <p><strong>Visit Us:</strong> 123 Sweet Lane, Lipa City</p>
+            <p><strong>Telephone No.:</strong> 123-456-7890</p>
+            <p><strong>Email:</strong> <a href="mailto:patisserienocturne@gmail.com">patisserienocturne@gmail.com</a></p>
+            <p><strong>Facebook:</strong> <a href="https://www.facebook.com/profile.php?id=61584544536178" target="_blank">@nocturnepatisserie</a></p>
+            <p><strong>Instagram:</strong> <a href="https://www.instagram.com/nocturnepatisserie?igsh=MXZrajg1M3A0NzllMw==&utm_source=ig_contact_invite" target="_blank">@nocturne.patisserie</a></p>
+            <h2>Business Hours</h2>
+            <p>We're open Monday to Saturday, from 8 AM to 6 PM; closed on Sundays</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <footer class="footer">
+      <p>© 2025 Nocturne Patisserie. Crafted daily in Lipa.</p>
+      <div class="footer-links">
+        <a href="https://www.instagram.com/nocturnepatisserie?igsh=MXZrajg1M3A0NzllMw==&utm_source=ig_contact_invite">Instagram</a>
+        <a href="https://www.facebook.com/profile.php?id=61584544536178">Facebook</a>
+        <a href="mailto:patisserienocturne@gmail.com">Email</a>
+      </div>
+    </footer>
+    <!-- Submission confirmation modal -->
+    <div id="form-modal" class="modal" aria-hidden="true">
+      <div class="modal-backdrop" data-close></div>
+      <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <button class="modal-close" aria-label="Close" data-close>&times;</button>
+        <h3 id="modal-title">Thanks — submission received</h3>
+        <p>We got your request. We'll review it and get back to you within 24 hours.</p>
+        <div class="modal-actions">
+          <button class="cta" data-close>Close</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function(){
+        const modal = document.getElementById('form-modal');
+        const openModal = () => {
+          modal.removeAttribute('aria-hidden');
+          modal.classList.add('open');
+          document.body.style.overflow = 'hidden';
+          // focus first focusable element inside modal
+          const btn = modal.querySelector('[data-close]');
+          if(btn) btn.focus();
+        };
+        const closeModal = () => {
+          modal.setAttribute('aria-hidden','true');
+          modal.classList.remove('open');
+          document.body.style.overflow = '';
+        };
+
+        // intercept all forms on the page
+        document.querySelectorAll('form').forEach(form => {
+          form.addEventListener('submit', function(e){
+            e.preventDefault();
+            // optionally: validate here
+            openModal();
+            try { form.reset(); } catch(_){}
+          });
+        });
+
+        // close on click of elements with [data-close]
+        modal.addEventListener('click', function(e){
+          if(e.target.hasAttribute('data-close')) closeModal();
+        });
+
+        // close on Esc
+        document.addEventListener('keydown', function(e){
+          if(e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+        });
+      })();
+    </script>
+    </div>
+  </body>
+</html>
