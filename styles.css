@@ -701,6 +701,13 @@ header { /* Sections and headers spacing */
   }
 }
 
+/* Very small phones */
+@media (max-width: 380px) {
+  .contactUs .container .contact-photo img.contact-photo-img { height: 140px; }
+  .tile-img { height: 100px; }
+  .tile span { font-size: 1.2rem; top: -14px; }
+}
+
 /* Phone / small tablet adjustments: make layouts stack, reduce paddings, scale images */
 @media (max-width: 600px) {
   /* Contact Us: stack photo and content vertically */
@@ -865,3 +872,38 @@ header { /* Sections and headers spacing */
   }
 }
 
+/* Booking/contact form tweaks specifically for small screens */
+@media (max-width: 600px) {
+  .contact-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.25rem;
+  }
+  .contact-card > div,
+  .contact-card form {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  .contact-card .eyebrow {
+    font-size: 0.9rem;
+  }
+  .contact-card h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+  .field input,
+  .field textarea {
+    width: 100%;
+    font-size: 1rem;
+  }
+  .field {
+    margin-bottom: 0.75rem;
+  }
+  .contact-card .cta {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    font-size: 1rem;
+  }
+}
