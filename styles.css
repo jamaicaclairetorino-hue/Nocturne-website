@@ -61,7 +61,7 @@
     rgba(255, 255, 255, 0.96),
     rgba(231, 235, 238, 0.95)
   );
-  --shadow: 0 20px 60px rgba(0,0,0,0.15);
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
   --glass: rgba(15, 17, 21, 0.05);
   --tile-index: rgba(0, 0, 0, 0.08);
   --quote-color: rgba(0, 0, 0, 0.08);
@@ -97,7 +97,6 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-top: 1.5rem; /* merged from duplicate declaration */
 }
 
 .nav {
@@ -115,6 +114,14 @@ header {
   margin-top: 0;
   z-index: 10;
   border: 1px solid var(--stroke);
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 1.5rem;
 }
 
 /*FONT*/
@@ -423,11 +430,13 @@ header {
   border-radius: 12px 12px 8px 8px;
   margin-bottom: 0.9rem;
   box-shadow: 0 8px 22px rgba(0,0,0,0.18);
-  transition: transform 450ms cubic-bezier(.2,.9,.2,1);
-  transform-origin: center center;
 }
 
 /* Hover / focus zoom animation for tile images */
+.tile-img {
+  transition: transform 450ms cubic-bezier(.2,.9,.2,1);
+  transform-origin: center center;
+}
 .tile:hover .tile-img,
 .tile:focus-within .tile-img {
   transform: scale(1.12);
@@ -580,6 +589,73 @@ header {
 /* Class to show the popup */
 .show {
     display: flex;
+}
+
+/* Hide the checkbox */
+.modal-toggle {
+  display: none;
+}
+
+/* Modal base styles (assuming you have these; adjust as needed) */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Show modal when checkbox is checked */
+.modal-toggle:checked ~ .modal {
+  display: flex;
+}
+
+/* Backdrop and content styles (add if not already in your design) */
+.modal-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+.modal-actions {
+  text-align: center;
+  margin-top: 20px;
+}
+
+
+.contact-card {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 3rem;
+  border-radius: 32px;
+  background: var(--contact-gradient);
+  border: 1px solid var(--stroke);
+  box-shadow: var(--shadow);
 }
 
 .container {

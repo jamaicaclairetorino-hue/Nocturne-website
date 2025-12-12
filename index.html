@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!--FONTS-->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nocturne Patisserie | Crafted Cookies & Pastries</title>
@@ -13,11 +14,13 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <!-- PAGE SHELL -->
     <input id="theme-toggle" type="checkbox" hidden />
     <div class="page-shell">
     <header class="hero" id="home">
       <nav class="nav">
         <div class="logo">Nocturne Patisserie</div>
+        <!--NAVIGATIONS-->
         <ul class="nav-links">
           <li><a href="#artisan">Artisanry</a></li>
           <li><a href="#collection">Collection</a></li>
@@ -33,6 +36,7 @@
           <a class="cta ghost" href="#contact">Taste Session</a>
         </div>
       </nav>
+      <!-- DESCRIPTION SECTION -->
       <div class="hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">Small-batch pastry atelier</p>
@@ -65,7 +69,7 @@
         </div>
       </div>
     </header>
-
+      <!-- ARTISAN SECTION -->
     <section id="artisan" class="artisan">
       <div class="section-box">
       <div class="section-header">
@@ -104,7 +108,7 @@
       </div>
       </div>
     </section>
-
+      <!-- COLLECTION SECTION -->
     <section id="collection" class="collection">
       <div class="section-box">
       <div class="section-header">
@@ -139,7 +143,7 @@
       </div>
       </div>
     </section>
-
+      <!-- TESTIMONIALS SECTION -->
     <section id="testimonials" class="testimonials">
       <div class="section-box">
       <div class="section-header">
@@ -170,7 +174,7 @@
       </div>
       </div>
     </section> 
-
+      <!--- MENU SECTION --->
     <section id="menu" class="menu">
       <div class="section-box">
       <div class="section-header">
@@ -180,7 +184,7 @@
       </div>
       </div>
     </section>
-
+      <!-- CONTACT SECTION -->
     <section id="contact" class="contact">
       <div class="contact-card">
         <div>
@@ -194,11 +198,11 @@
         <form id="bookingForm">
           <div class="field">
             <label for="name">Name</label>
-            <input id="name" type="text" placeholder="Your name" />
+            <input id="name" type="text" placeholder="Your name" required />
           </div>
           <div class="field">
             <label for="email">Email</label>
-            <input id="email" type="email" placeholder="hello@gmail.com" />
+            <input id="email" type="email" placeholder="hello@gmail.com" required />
           </div>
           <div class="field">
             <label for="event">Event Vision</label>
@@ -206,15 +210,21 @@
               id="event"
               rows="3"
               placeholder="Describe the mood, location, and number of guests."
+              required
             ></textarea>
           </div>
           <button class="cta" type="submit">Submit</button>
         </form>
-        <div id="successPopup" class="popup">
-          <div class="popup-content">
-            <span class="close-btn">&times;</span>
-            <h2>Successfully Booked!</h2>
-            <p>Your booking has been confirmed.</p>
+        <!-- Submission confirmation modal -->
+         <div id="form-modal" class="modal" aria-hidden="true">
+          <div class="modal-backdrop" data-close></div>
+          <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button class="modal-close" aria-label="Close" data-close>&times;</button>
+            <h3 id="modal-title">Thanks — submission received</h3>
+            <p>We got your request. We'll review it and get back to you within 24 hours.</p>
+            <div class="modal-actions">
+              <button class="cta" data-close>Close</button>
+            </div>
           </div>
         </div>
       </div>
@@ -227,7 +237,7 @@
         <img class="contact-photo-img" src="sweet2.jpg" alt="Lumière shop front" />
       </div>
 
-      <!-- right: contact content (eyebrow + contact block) -->
+      <!-- right: contact content -->
       <div class="contact-content">
         <h2 class="eyebrow2">Get in Touch</h2>
         <div class="contact-flex">
@@ -245,7 +255,7 @@
       </div>
     </div>
   </section>
-
+    <!-- FOOTER -->
     <footer class="footer">
       <p>© 2025 Nocturne Patisserie. Crafted daily in Lipa.</p>
       <div class="footer-links">
@@ -254,18 +264,6 @@
         <a href="mailto:patisserienocturne@gmail.com">Email</a>
       </div>
     </footer>
-    <!-- Submission confirmation modal -->
-    <div id="form-modal" class="modal" aria-hidden="true">
-      <div class="modal-backdrop" data-close></div>
-      <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-        <button class="modal-close" aria-label="Close" data-close>&times;</button>
-        <h3 id="modal-title">Thanks — submission received</h3>
-        <p>We got your request. We'll review it and get back to you within 24 hours.</p>
-        <div class="modal-actions">
-          <button class="cta" data-close>Close</button>
-        </div>
-      </div>
-    </div>
 
     <script>
       (function(){
@@ -305,6 +303,5 @@
         });
       })();
     </script>
-    </div>
   </body>
 </html>
