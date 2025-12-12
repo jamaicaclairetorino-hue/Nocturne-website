@@ -37,13 +37,13 @@
   --quote-color: rgba(255, 255, 255, 0.06);
 }
 
-#theme-toggle {
+#theme-toggle { /* Toggle Dark/Light Mode */
   position: absolute;
   opacity: 0;
   pointer-events: none;
 }
 
-#theme-toggle:checked ~ .page-shell {
+#theme-toggle:checked ~ .page-shell { /** Variables for light mode when toggle is checked **/
   --page-bg: linear-gradient(150deg, #f8f6f1, #fefefe 60%, #f1f1f1);
   --text-light: #181a1f;
   --text-soft: #454a53;
@@ -67,7 +67,7 @@
   --quote-color: rgba(0, 0, 0, 0.08);
 }
 
-html {
+html { /** Smooth scrolling for anchor links **/
   scroll-behavior: smooth;
 }
 
@@ -87,8 +87,8 @@ body {
   transition: background 0.6s ease, color 0.6s ease;
 }
 
-section,
-header {
+section, 
+header { /* Sections and headers spacing */
   padding: 6rem 0;
 }
 
@@ -99,7 +99,7 @@ header {
   justify-content: space-between;
 }
 
-.nav {
+.nav { /* Navbar */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -131,13 +131,13 @@ header {
   letter-spacing: 0.2rem;
 }
 
-.nav-links {
+.nav-links { /* Navigation links */
   list-style: none;
   display: flex;
   gap: 2rem;
 }
 
-.nav-actions {
+.nav-actions { /* Navigation actions container */
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -172,7 +172,7 @@ header {
   opacity: 0.4;
 }
 
-.theme-switch .thumb {
+.theme-switch .thumb { 
   position: absolute;
   width: 44px;
   height: 30px;
@@ -201,7 +201,7 @@ header {
   opacity: 1;
 }
 
-.nav-links a {
+.nav-links a { /* Link styles with underline effect */
   color: var(--text-light);
   text-decoration: none;
   font-size: 0.95rem;
@@ -234,7 +234,7 @@ header {
 }
 
 .cta,
-.popup-content {
+.popup-content { /* Call-to-action button */
   border: none;
   cursor: pointer;
   border-radius: 999px;
@@ -354,11 +354,22 @@ header {
   margin: 1rem 0;
 }
 
-.artisan,
-.collection,
+
 .testimonials,
 .contact {
   position: relative;
+}
+
+.artisan {
+  position: relative;
+  margin-top: 0;
+  padding-top: 3.5rem;
+}
+
+.collection {
+  position: relative;
+  margin-top: 0;
+  padding-top: 1.5rem;
 }
 
 /* ContactUs layout: left photo, right content — use flex so both sides match height */
@@ -591,61 +602,6 @@ header {
     display: flex;
 }
 
-/* Hide the checkbox */
-.modal-toggle {
-  display: none;
-}
-
-/* Modal base styles (assuming you have these; adjust as needed) */
-.modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1000;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Show modal when checkbox is checked */
-.modal-toggle:checked ~ .modal {
-  display: flex;
-}
-
-/* Backdrop and content styles (add if not already in your design) */
-.modal-backdrop {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-}
-.modal-content {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  max-width: 400px;
-  width: 90%;
-  position: relative;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-.modal-close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-}
-.modal-actions {
-  text-align: center;
-  margin-top: 20px;
-}
-
 
 .contact-card {
   display: grid;
@@ -790,13 +746,6 @@ header {
   .hero-grid { padding-top: 2rem; gap: 1.5rem; }
 }
 
-/* Very small phones */
-@media (max-width: 380px) {
-  .contactUs .container .contact-photo img.contact-photo-img { height: 140px; }
-  .tile-img { height: 100px; }
-  .tile span { font-size: 1.2rem; top: -14px; }
-}
-
 /* contactUs layout is handled above (flex). Mobile tweaks for the image are defined earlier. */
 
 .sweet-photo {
@@ -916,38 +865,3 @@ header {
   }
 }
 
-/* Booking/contact form tweaks specifically for small screens */
-@media (max-width: 600px) {
-  .contact-card {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1.25rem;
-  }
-  .contact-card > div,
-  .contact-card form {
-    width: 100%;
-    padding: 0;
-    margin: 0;
-  }
-  .contact-card .eyebrow {
-    font-size: 0.9rem;
-  }
-  .contact-card h2 {
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
-  }
-  .field input,
-  .field textarea {
-    width: 100%;
-    font-size: 1rem;
-  }
-  .field {
-    margin-bottom: 0.75rem;
-  }
-  .contact-card .cta {
-    width: 100%;
-    padding: 0.85rem 1rem;
-    font-size: 1rem;
-  }
-}
